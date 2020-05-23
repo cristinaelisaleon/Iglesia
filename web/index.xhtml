@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml"
+
+
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Iglesia Cristo Rey</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"/>
+<!--        <link rel="stylesheet" href="css/normalize.css"/>-->
+        <!--        <link rel="stylesheet" href="css/styles.css"/>  
+                <link rel="stylesheet" href="css/new.css"/>  
+                        <link rel="stylesheet" href="css/styeRegister.css"/>-->
+        <link rel="stylesheet" href="css/newcss.css" />
+    </h:head>
+    <h:body>
+
+        <div class="wrap">
+            <div class="row">
+
+                <div class="grid_12 columns">
+                    <div class="tab style-1">
+                        <ul>
+                            <li class="active">
+                                <div class="form">
+                                    <h1 style="color: salmon"><strong>Iglesia Cristo Rey</strong></h1>
+                                    <img src="img/logo.png" alt="Logotipo Iglesia Cristo Rey"/>
+                                </div>
+                                <div class="form">
+
+                                    <p class="sign" align="center">Nivel</p>
+                                    <input type="radio" id="primer" name="descripcion" value='#{nivelBean.descripcion}'></input>
+                                    <label>Primer Nivel de Primera Comunion</label>  <p></p>
+                                    <input type="radio" id="segundo" name="descripcion" value='#{nivelBean.descripcion}'></input>
+                                    <label >Segundo Nivel de Primera Comunion</label>  <p></p>
+                                    <input type="radio" id="primerc" name="descripcion" value='#{nivelBean.descripcion}'></input>
+                                    <label >Primer Nivel de Confirmacion</label>  <p></p>
+                                    <input type="radio" id="segundoc" name="descripcion" value='#{nivelBean.descripcion}'></input>
+                                    <label >Segundo Nivel de Confirmacion</label>
+                                </div>
+
+                                <div class="form">
+                                    <p class="sign" align="center">Datos del estudiante</p>
+                                    <p:inputText  class="active textbox" placeholder="Cedula" required="true"  value="#{alumnoBean.cedula}"/><validator validatorId="ValidacionNum"></validator>
+                                    <p:inputText  class="active textbox" placeholder="Nombres" value="#{alumnoBean.nombres}"/>
+                                    <p:inputText  class="active textbox" placeholder="Apellidos" required="true" value="#{alumnoBean.apellidos}"/>
+                                    <p:inputText  class="active textbox" placeholder="Direccion" value="#{alumnoBean.direccion}"/>
+                                    <label>Edad: </label>
+                                    <input type="number" required="true" min="8" value="#{alumnoBean.edad}"/>
+                                    <p:calendar  class="active textbox" placeholder="Fecha de Nacimiento" value="#{alumnoBean.fechan}" pattern="dd/mm/2000" locale="es" navigator="true" maxdate="30/02/2020"
+                                                 yearRange="c-90:c" />                     
+                                </div>
+
+                                <div class="form">
+                                    <p class="sign" align="center">Datos del representante</p>
+                                    <p:inputText  class="active textbox" placeholder="Cedula" required="true"  value="#{alumnoBean.cedular}"/><validator validatorId="ValidacionNum"></validator>
+                                    <p:inputText class="active textbox" placeholder="Nombres" value="#{alumnoBean.nombresr}"/>
+                                    <p:inputText class="active textbox" placeholder="Apellidos" required="true"  value="#{alumnoBean.apellidosr}"/>
+                                    <p:inputText class="active textbox" placeholder="Celular" required="true"  value="#{alumnoBean.cedular}"/><validator validatorId="ValidacionNum"></validator>                                
+                                </div>
+                                
+                                <div class="form">
+                                    <h:commandButton value="Registrarse" action="#{alumnoBean.addAlumno()}"  />
+                                </div>
+
+
+                            </li>
+                        </ul>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <p >Todos los Derechos Reservados 2020 &copy; Iglesia Cristo Rey</p>
+        </footer>
+
+
+    </h:body>
+</html>
+
