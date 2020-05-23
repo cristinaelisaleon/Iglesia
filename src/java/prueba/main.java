@@ -17,9 +17,8 @@ import java.util.Date;
  * @author Meg@_Trom
  */
 public class main {
-
+    
     public static void main(String[] args) {
-
         
     }
 
